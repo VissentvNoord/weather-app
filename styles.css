@@ -1,0 +1,68 @@
+html, body{
+    height: 100%;
+    padding: 0;
+    margin: 0 auto;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: grid;
+    grid-template-rows: 100px;
+}
+
+header{
+    box-shadow: 0px 0px 4px black;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+
+    align-items: center;
+    justify-content: center;
+}
+
+header > .searchbox{
+    height: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#search-result{
+    display: grid;
+    width: 100%;
+}
+
+#search-result > button{
+    width: 100%;
+}
+
+#weather-today{
+    height: 100%;
+    margin: 0;
+    background-color: rgb(223, 223, 223);
+    z-index: -1;
+
+    display: grid;
+    grid-template-rows: 100px 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+#weather-today > h1{
+    margin: 0;
+    text-align: center;
+}
+
+#weather-today > img{
+    transform: scale(1.5);
+    justify-self: center;
+    align-self: self-end;
+}
+
+#weather-today > .temp{
+    align-self: self-start;
+}
+
+.canvas{
+    display: grid;
+    grid-template-columns: 400px 1fr;
+}
