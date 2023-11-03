@@ -21,14 +21,24 @@ header{
 }
 
 header > .searchbox{
-    height: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
+    height: 100%;
+    display: grid;
+    justify-content: self-end;
+}
+
+.searchbox > input{
+    border: none;
+    background-color: lightgrey;
+    padding: 20px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    align-self: self-end;
 }
 
 #search-result{
     display: grid;
-    width: 100%;
+    align-self: self-end;
+    position: absolute;
 }
 
 #search-result > button{
