@@ -8,15 +8,20 @@
   <body>
     <header>
       <div class="searchbox">
-        <input type="text" id="search-input">
-        <div id="search-result">
-        </div>
+        <input type="text" id="search-input" placeholder="Search location">
       </div>
 
       <h1>Forecast</h1>
+
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"><p>F</p></span>
+      </label>
     </header>
 
     <div class="canvas">
+      <div id="search-result">
+      </div>
       <div id="weather-today">
 
       </div>

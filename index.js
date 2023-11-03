@@ -18,6 +18,7 @@ const trySearch = async function (keyword){
 const getCurrentData = async function (location){
     let data = await api.getData(location);
     displayController.today.loadData(location, data); 
+    setConditionGif(data.condition.text);
     console.log(data);
 }
 
@@ -31,3 +32,13 @@ input.addEventListener("keypress", function (evt){
 
     trySearch(this.value);
 });
+
+async function setConditionGif(keyword){
+    keyword = "weather-" + keyword;
+    const url = 'https://api.giphy.com/v1/gifs/translate?api_key=4OyEIhRKI8sUnp4mS3Qk51iXgaedO7nc&s=' + keyword;
+    const response = fetch(url, {mode: "cors"});
+    (await response).json().then(function(response){
+        console.log(keyword);
+        displayController.today.setConditionGIF(response.data.images.original.url);
+    })
+}
