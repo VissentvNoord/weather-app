@@ -1,13 +1,18 @@
 import api from "./apihandler.js";
 import displayController from "./displayController.js";
 
+function buttonSearch(name){
+    displayController.search.clearResult();
+    getCurrentData(name);
+}
+
 const trySearch = async function (keyword){
     let data = await api.search(keyword);
 
     //Display data
     console.log(data);
 
-    displayController.search.loadResult(data);
+    displayController.search.loadResult(data, buttonSearch);
 }
 
 const getCurrentData = async function (location){

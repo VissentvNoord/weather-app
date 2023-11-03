@@ -2,6 +2,8 @@ const today = (function(){
     const content = document.getElementById('weather-today');
 
     const loadData = function(locationName , data){
+        content.innerHTML = '';
+
         const temp = data.temp_c;
         const conditionIcon = data.condition.icon;
         locationName.trim();
@@ -28,13 +30,14 @@ const search = (function(){
     const button = document.getElementById('search-btn');
     const input = document.getElementById('search-input');
 
-    const loadResult = function (data){
+    const loadResult = function (data, buttonEvent){
         clearResult();
         if(data.length <= 0)
         return;
 
         data.forEach(result => {
             const newLocationButton = document.createElement('button');
+            newLocationButton.addEventListener('click', function () {buttonEvent(result.name)});
             newLocationButton.innerHTML = result.name + ', ' + result.country;
             searchResult.appendChild(newLocationButton);
         });
